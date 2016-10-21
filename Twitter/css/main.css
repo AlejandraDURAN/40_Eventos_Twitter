@@ -1,0 +1,61 @@
+* {
+  font-family: 'Prompt', sans-serif;
+}
+
+.background{
+  background-color:#A9E2F3;
+}
+
+label{
+  font-size: 3em;
+}
+.form-control{
+  font-size: 3em;
+}
+.cajita{
+  background-color: #A9E2F3;
+  border-radius: 6px;
+  margin-top: 10px;
+}
+.text-white{
+  color: white;
+}
+
+button{
+    width: 20%;
+  }
+
+/*clases de posicionamiento*/
+.pb-5{
+    padding-bottom: 5%;
+}
+.pt-5{
+    padding-top: 5%;
+}
+
+.pt-10{
+    padding-top: 10%;
+}
+ 
+
+/*jqueries*/
+
+@media screen and (max-width: 768px){
+  button{
+    width: 40%;
+
+  }
+  h1{
+    font-size: 20px;
+  }
+  li{
+    font-size: 25px;
+  }
+  .form-control{
+  font-size: 2em;
+}
+  }
+
+
+
+
