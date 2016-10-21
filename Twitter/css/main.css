@@ -1,9 +1,24 @@
-* {
+body{
   font-family: 'Prompt', sans-serif;
 }
 
+.allkraken{
+   font-family: 'Lobster';
+}
+footer{
+    position:fixed;
+    height:50px;
+    bottom:0px;
+    left:0px;
+    right:0px;
+    margin-bottom:0px;
+}
 .background{
   background-color:#A9E2F3;
+}
+
+.background1{
+  background-color:#A9BCF5;
 }
 
 label{
@@ -37,6 +52,9 @@ button{
     padding-top: 10%;
 }
  
+ .mr-2{
+  margin-right: 2%;
+ }
 
 /*jqueries*/
 
@@ -56,6 +74,7 @@ button{
 }
   }
 
-
-
+.tachado{
+  text-decoration:line-through;
+}
 
