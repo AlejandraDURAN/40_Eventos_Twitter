@@ -23,3 +23,10 @@ footer{
 .mr-2{
   margin-right: 2%;
  }
+
+.tupper{
+  display: inline-block;
+  width: 20%;
+  background-color: white;
+  padding: 1%;
+}

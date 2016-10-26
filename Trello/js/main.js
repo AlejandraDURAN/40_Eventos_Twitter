@@ -10,32 +10,39 @@ function agregarLista (){
 	button.setAttribute( "type","button");
 	button.setAttribute( "class","btn btn-success");
 	button.textContent = "Guardar"
-	contenedor.appendChild(text);
-	contenedor.appendChild(button);
-
+	var cajita = document.createElement("div");
+	cajita.setAttribute("class","tupper");
+	cajita.appendChild(text);
+	cajita.appendChild(button);
+	contenedor.appendChild(cajita);
 button.addEventListener("click",agregartarjeta);
 
 function agregartarjeta (){
 	if (text.value == ""|| text.value== null){
         alert ("No has escrito nada, no puedes añadir una lista");
    }else{
-   	var titulo= document.createElement("span");
+   	text.parentNode.removeChild(text);
+   	button.parentNode.removeChild(button);
+   	var titulo= document.createElement("h4");
 	titulo.innerHTML = text.value;
-	var cajita =document.createElement("div");
-	cajita.appendChild(titulo);
-	contenedor.appendChild(cajita);
-	cajita.setAttribute("class","tupper")
-    var intarjeta = document.createElement("input");
-    intarjeta.setAttribute("type", "button");
+	 cajita.appendChild(titulo);
+	 
+	var intarjeta =document.createElement("button");
     intarjeta.setAttribute( "class","btn btn-info");
     intarjeta.setAttribute("value","Crear tarjeta");
+    intarjeta.innerHTML ="Añadir";
     cajita.appendChild(intarjeta);
+    var conttarjeta = document.createElement("textarea");
+    cajita.appendChild(conttarjeta);
 
     intarjeta.addEventListener("click",tarjetita);
+    
     function tarjetita(){
-    	var content = document.createElement("textarea");
-    	content.innerHTML=text.value;
+    	var content = document.createElement("p");
+    	content.innerHTML=conttarjeta.value;
+    	titulo.setAttribute("class","");
     	cajita.appendChild(content);
+    	titulo.value ="";
     }
 }
 
