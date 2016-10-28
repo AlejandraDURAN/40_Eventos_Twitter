@@ -25,8 +25,20 @@ footer{
  }
 
 .tupper{
-  display: inline-block;
-  width: 20%;
+  float: left;
+  width: 15%;
   background-color: white;
   padding: 1%;
+  margin: 1%;
+}
+
+.scroll {
+overflow-x: scroll;
+overflow-y: scroll;
+height: 580px;
+white-space: nowrap;
+}
+
+.block,.btn-success {
+  display: block;
 }

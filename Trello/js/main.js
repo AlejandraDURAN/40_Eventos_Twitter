@@ -9,14 +9,14 @@ function agregarLista (){
 	var button = document.createElement("button");
 	button.setAttribute( "type","button");
 	button.setAttribute( "class","btn btn-success");
-	button.textContent = "Guardar"
+	button.textContent = "Guardar";
+
 	var cajita = document.createElement("div");
 	cajita.setAttribute("class","tupper");
 	cajita.appendChild(text);
 	cajita.appendChild(button);
-	contenedor.appendChild(cajita);
+  contenedor.insertBefore(cajita,caja);
 button.addEventListener("click",agregartarjeta);
-
 function agregartarjeta (){
 	if (text.value == ""|| text.value== null){
         alert ("No has escrito nada, no puedes añadir una lista");
@@ -24,28 +24,37 @@ function agregartarjeta (){
    	text.parentNode.removeChild(text);
    	button.parentNode.removeChild(button);
    	var titulo= document.createElement("h4");
-	titulo.innerHTML = text.value;
-	 cajita.appendChild(titulo);
+	  titulo.innerHTML = text.value;
+	  cajita.appendChild(titulo);
 	 
-	var intarjeta =document.createElement("button");
+	var intarjeta =document.createElement("input");
+    intarjeta.setAttribute("type","button");
     intarjeta.setAttribute( "class","btn btn-info");
     intarjeta.setAttribute("value","Crear tarjeta");
     intarjeta.innerHTML ="Añadir";
     cajita.appendChild(intarjeta);
-    var conttarjeta = document.createElement("textarea");
-    cajita.appendChild(conttarjeta);
-
     intarjeta.addEventListener("click",tarjetita);
     
     function tarjetita(){
-    	var content = document.createElement("p");
-    	content.innerHTML=conttarjeta.value;
-    	titulo.setAttribute("class","");
-    	cajita.appendChild(content);
-    	titulo.value ="";
+      var conttarjeta = document.createElement("textarea");
+      conttarjeta.setAttribute("placeholder","Añadir tarjeta...");
+      conttarjeta.setAttribute("class","block");
+      var btntarjeta=document.createElement("button");
+      btntarjeta.setAttribute("type", "button");
+      btntarjeta.setAttribute("class", "btn btn-primary");
+      btntarjeta.textContent ="Añadir"
+      cajita.insertBefore(conttarjeta,intarjeta);
+      cajita.insertBefore(btntarjeta,intarjeta);
+      btntarjeta.addEventListener("click",agtarjeta);
+    	function agtarjeta (){
+        if (conttarjeta.value === ""|| conttarjeta.value == null){
+          alert ("Falta que ingreses el nombre de tarjeta");
+        } else{
+          btntarjeta.parentNode.removeChild(btntarjeta);
+        }
+      }
     }
 }
-
 
 }
 
